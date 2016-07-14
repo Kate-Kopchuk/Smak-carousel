@@ -1,0 +1,81 @@
+$bg-brand: #ffe600;
+$bg-inverse: #fff;
+$body-bg: #fff;
+$text-light: 300;
+$text-regular: 400;
+$text-bold: 700;
+$line-height-base: 1.6;
+
+h3, h5 { text-transform: uppercase; }
+
+@mixin bg-icon-pill ($background, $border-radius, $height, $width, $margin) {
+  background: $background;
+  border-radius: $border-radius;
+  height: $height;
+  width: $width;
+  margin: $margin;
+}
+
+.pull-left {
+  float: left;
+}
+.pull-right {
+  float: right;
+}
+.block-center {
+  margin: 0 auto;
+}
+.overflow {
+  overflow: hidden;
+}
+.bg-icon-pill-brand-lg {
+  @include bg-icon-pill($bg-brand, 200px, 106px, 106px, 0 auto);
+}
+.bg-icon-pill-inverse-lg {
+  @include bg-icon-pill($bg-inverse, 200px, 106px, 106px, 0 auto);
+  border: 1px solid #000;
+}
+.bg-icon-pill-brand-sm {
+  @include bg-icon-pill($bg-brand, 200px, 70px, 70px, 0 30px 0 0);
+}
+.inverse {
+  color: #fff;
+}
+.text-light {
+  font-weight: $text-light;
+}
+.text-regular {
+  font-weight: $text-regular;
+}
+.text-bold {
+  font-weight: $text-bold;
+}
+
+// Features
+.features__icon {
+  position: relative;
+  margin-bottom: 25px; 
+    &:before {
+     content: '';
+     display: inline-block;
+     vertical-align: middle;
+     height: 100%;
+   }
+}
+ svg {
+   display: inline-block;
+   vertical-align: middle;
+ }
+ .features__article {
+  & .tittle {
+    & h3 {
+      margin-top: 0;
+    }
+  }
+  & .discription {
+    & p {
+      line-height: $line-height-base;
+      font-weight: 300;
+    }
+  }
+}
